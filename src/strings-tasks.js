@@ -156,8 +156,15 @@ function repeatString(str, times) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  const a = str.indexOf(value);
+  if (a >= 0) {
+    const b = str.slice(0, a);
+    const c = value.length;
+    const d = str.slice(a + c);
+    return b + d;
+  }
+  return str;
 }
 
 /**
@@ -172,8 +179,15 @@ function removeFirstOccurrences(/* str, value */) {
  *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeLastOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeLastOccurrences(str, value) {
+  const a = str.lastIndexOf(value);
+  if (a >= 0) {
+    const b = str.slice(0, a);
+    const c = value.length;
+    const d = str.slice(a + c);
+    return b + d;
+  }
+  return str;
 }
 
 /**
@@ -342,8 +356,16 @@ function countVowels(str) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  
+  const a = str.split('');
+  const b = a.reverse();
+  for (let i = 0; i < str.length; i += 1) {
+    if (a[i] === b[i]) {
+      return true;
+    }
+    return false;
+  }
 }
 
 /**
@@ -421,8 +443,11 @@ function invertCase(str) {
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  const a = 'Hello,';
+  const b = ' ';
+  const c = '!';
+  return a + b + firstName + b + lastName + c;
 }
 
 /**
